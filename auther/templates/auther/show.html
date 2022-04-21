@@ -1,0 +1,17 @@
+{% extends 'layouts/index.html' %}
+{% block content %}
+        <div class="card w-25 p-3 mt-5 m-auto">
+            <h5 class="card-title">Auther Details</h5>
+            <div class="card-body">
+              <p class="card-text">Name: {{ auther.name }}</p>
+              <p class="card-text">Books: {{auther.books.count}} Book</p>
+              <p class="card-text">List of books: 
+                <div class="list-group m-2 m-auto">
+                  {% for book in auther.books.all %}
+                    <a href="{% url 'book_view' book.id %}" class="list-group-item list-group-item-action">{{ book.name }}</a>
+                  {% endfor %}
+              </div>
+               </p>
+            </div>
+          </div>
+{% endblock%}

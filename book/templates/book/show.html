@@ -1,0 +1,14 @@
+{% extends 'layouts/index.html' %}
+{% load static %}
+{% block content %}
+    <div class="card w-25 p-3 m-auto mt-5">
+        <h5 class="card-title">Book Details</h5>
+        <img src="{% static '/uploads/' %}{{ book.image }}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ book.name }}</h5>
+          <p class="card-text">{{book.description}}</p>
+          <p class="card-text">Price: {{book.price}}</p>
+          <p class="card-text">Auther: <a href="{% url 'auther_view' book.auther.id %}">{{book.auther}}</a></p>
+        </div>
+      </div>
+{% endblock %}

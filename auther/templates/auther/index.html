@@ -1,0 +1,10 @@
+{% extends 'layouts/index.html' %}
+{% block content %}
+    <div class="list-group w-25 mt-5 m-auto">
+        <h3>Authers List</h3>
+        {% for auther in authers %}
+            <a href="{% url 'auther_view' auther.id %}" class="list-group-item list-group-item-action">{{ auther.name }}</a>
+        {% endfor %}
+    </div>
+
+{% endblock %}

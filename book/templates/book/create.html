@@ -1,0 +1,14 @@
+{% extends 'layouts/index.html' %}
+{% load static %}
+{% block content %}
+        <div class="card w-50 p-3 m-auto mt-5">
+            {{form.errors }}
+            <h5 class="card-title">Create New Book</h5>
+            <form method="post"  enctype="multipart/form-data">{% csrf_token %}
+              {{ form.as_p }}
+              <input type="submit" value="Save">
+          </form>
+          
+            
+          </div>
+{% endblock%}
